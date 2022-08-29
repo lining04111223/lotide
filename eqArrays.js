@@ -7,14 +7,14 @@ const assertEqual = function(actual, expected) {
 };
 module.exports = assertEqual;
 
-const eqArrays = function(arrayOne, arrayTwo) {
+const eqArrays = function(array1, array2) {
 
-  if (arrayOne.length !== arrayTwo.length) {
+  if (array1.length !== array2.length) {
     return false;
   }else{
 
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] !== arrayTwo[i]) {
+  for (let i = 0; i < array1.length; i++) {
+    if (array1[i] !== array2[i]) {
       return false;
     }
   }
