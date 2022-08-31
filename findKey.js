@@ -9,7 +9,16 @@ const assertEqual = function(actual, expected) {
 module.exports = assertEqual;
 // TEST CODE
 
-findKey({
+const findKey = function(obj, callback){
+
+for(let key of Object.keys(obj)){
+  if(callback(obj[key])){
+    return key;
+  }
+}
+}
+
+fun = findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },
   "noma":      { stars: 2 },
@@ -19,4 +28,4 @@ findKey({
 }, x => x.stars === 2) // => "noma"
 
 
-assertEqual("Lighthouse Labs", "noma");
+assertEqual(fun, "noma");
